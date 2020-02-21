@@ -1,0 +1,93 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+{% if form.non_field_errors %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {% for error in form.non_field_errors %}
+        <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
+      {% endfor %}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+<div class="wrapper-page">
+
+    <div class="card overflow-hidden account-card mx-3">
+
+        <div class="bg-primary p-4 text-white text-center position-relative">
+            <h4 class="font-20 m-b-5">Welcome Back !</h4>
+            <p class="text-white-50 mb-4">Sign in to continue to Dashboard.</p>
+            <a href="/" class="logo logo-admin"><img src="{% static 'assets/images/logo-sm.png' %}"
+                    height="24" alt="logo"></a>
+        </div>
+        <div class="account-card-content">
+
+            <form id="medical" method="POST" action="{% url 'medical_signup' %}" class="form-horizontal m-t-30">
+                {% csrf_token %}
+                <div class="form-group text-center">
+                  <div class="card card-body">
+                    <h3 class="card-title font-16 mt-0">Sign up for a free account</h3>
+                    <p class="card-text">Select below the type of account you want to create.</p>
+                </div>
+                
+                <button type="button" class="btn btn-primary w-md waves-effect waves-light"
+                 data-toggle="modal" data-target="#modal-medical" data-url="{% url 'medical_signup' %}" 
+                >Add +</button>
+                <button type="button" class="btn btn-primary w-md waves-effect waves-light"
+                 data-toggle="modal" data-target="#modal-patient" data-url="{% url 'patient_signup' %}" 
+                >patient</button>
+                <div id="modal-medical" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title mt-0" id="myModalLabel">Modal Heading</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          </div>
+                          <div class="modal-body">
+                              {% crispy form %}
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light" form="medical">Save changes</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+          </div>
+            </form>
+            <form id="patient" method="POST" action="{% url 'patient_signup' %}" class="form-horizontal m-t-30">
+                {% csrf_token %}
+                <div id="modal-patient" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title mt-0" id="myModalLabel">Modal Heading</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                          </div>
+                          <div class="modal-body">
+                              {% crispy forms %}
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light" form="patient">Save changes</button>
+                        </div>
+                      </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+          </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="m-t-40 text-center">
+        <p>Have an account already ? <a href="{% url 'login' %}" class="font-500 text-primary">Login</a> </p>
+    </div>
+</div>
+
+    
+{% endblock %}
