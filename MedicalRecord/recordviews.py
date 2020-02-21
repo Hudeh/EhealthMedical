@@ -24,16 +24,16 @@ def MedicalRecord(request):
                                                         birth_date=birth_date, current_symtomps=current_symtomps,
                                                         symtomps_complaint=symtomps_complaint, next_kin=next_kin,allegies=allegies                                                                      )
         record_form.save()
-        messages.success(request, f'Your Appointment was Succesful')
+        messages.success(request, f'Your Appointment form was Succesful')
     return render(request,'home.html')
 
 
-
+#search view but using javascript in the dashboard
 def search(request):
     records = PatientMedicalRecord.objects.order_by('-created_on')
 
-    if 'condition' in request.GET:
-        keywords = request.GET['condition']
+    if 'current_symtomps' in request.GET:
+        keywords = request.GET['current_symtomps']
         if keywords:
             records = records.filter(condition__iexact=keywords)
 

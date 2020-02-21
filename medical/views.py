@@ -15,7 +15,7 @@ User = get_user_model
 def index(request):
     return render(request, 'index.html')
 
-#login page
+#login page this is landing page for now
 def login_page(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -52,7 +52,6 @@ def medical_signup(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, f'Account Created')
             return redirect('login')
     context = {
        'form':form,
@@ -66,7 +65,6 @@ def patient_signup(request):
 
         if forms.is_valid():
             forms.save()
-            messages.success(request, f'Account Created')
             return redirect('login')
     context = {
        'forms':forms

@@ -149,12 +149,10 @@ class PatientCreationForm(forms.ModelForm):
 
             Row(
                 Column('role', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
                 Column('sex', css_class='form-group col-md-6 mb-0'),
                 css_class='form-row'
             ),
+            
 
         )
 
