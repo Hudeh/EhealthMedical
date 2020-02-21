@@ -9,6 +9,8 @@ from MedicalRecord.models import PatientMedicalRecord
 
 User = get_user_model
 
+
+#login page
 def login_page(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -26,20 +28,19 @@ def login_page(request):
     else:
         return render(request,'registration/login.html')
 
+#logout view
 def logout_page(request):
     logout(request)
     return redirect('/')
 
+
+#signup page 
 def SignUpView(request):
     form = MedicalCreationForm
     forms = PatientCreationForm
     return render(request,'registration/signup.html', {'form':form, 'forms':forms})
 
-
-
-
-
-
+#medical signup modal form
 def medical_signup(request):
     form = MedicalCreationForm(request.POST or None)
     if request.method == "POST":
@@ -53,6 +54,7 @@ def medical_signup(request):
     }
     return render(request, 'registration/signup_form.html', context)
 
+#patient signup
 def patient_signup(request):
     forms = PatientCreationForm(request.POST or None)
     if request.method == "POST":
@@ -67,10 +69,13 @@ def patient_signup(request):
     return render(request, 'registration/signup_form.html', context)
 
 
+#patient web page
 @login_required
 def patient_page(request):
     return render(request, 'home.html')
 
+
+#medical index page
 @login_required
 def medical_page(request):
     medical_staff = MyUser.objects.count()

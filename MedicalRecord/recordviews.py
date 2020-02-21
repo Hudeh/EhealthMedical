@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.contrib import messages
 from .models import PatientMedicalRecord
 
+
+
+
+#patient medical record view
 def MedicalRecord(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
@@ -26,23 +30,11 @@ def MedicalRecord(request):
 
 
 def search(request):
-    queryset_list = Listing.objects.order_by('-list_date')
-    # keywords search
-    if 'keywords' in request.GET:
-        keywords = request.GET['keywords']
-        if keywords:
-            queryset_list = queryset_list.filter( description__icontains=keywords)
-    #city
-    
-    if 'city' in request.GET:
-        city = request.GET['city']
-        if city:
-            queryset_list = queryset_list.filter(city__icontains=city)
+    records = PatientMedicalRecord.objects.order_by('-created_at')
 
-    context = { 
-    'listings' : queryset_list, 
-    'state_choice': state_choice,
-    'city_choice': city_choice,
-    'Values' : request.GET
-    }
-    return render(request, 'listing/search.html', context)
+    if 'condition' in request.GET:
+        keywords = request.GET['condition']
+        if keywords:
+            records = records.filter(condition__iexact=keywords)
+
+    return render(request, 'medical_record.html', {'records': records})

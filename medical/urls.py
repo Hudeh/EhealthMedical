@@ -2,6 +2,7 @@ from django.urls import include, path
 from . import views
 from MedicalRecord import recordviews
 
+# all urls for both medical and patient signup and index page
 urlpatterns = [
     path('', views.login_page, name='login'),
     path('logout/', views.logout_page, name='logout'),

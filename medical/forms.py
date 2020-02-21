@@ -5,16 +5,11 @@ from crispy_forms.layout import Layout, Submit, Row, Column, Field
 from.models import MyUser
 
 
-class LoginForm(forms.Form):
-    """A form for creating new users. Includes all the required
-    fields, plus a repeated password."""
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    email = forms.CharField()
+
 
 
 class MedicalCreationForm(forms.ModelForm):
-    """A form for creating new users. Includes all the required
-    fields, plus a repeated password."""
+    """A form for creating new medical user """
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Password confirmation', widget=forms.PasswordInput)
@@ -107,8 +102,7 @@ class MedicalCreationForm(forms.ModelForm):
 
 
 class PatientCreationForm(forms.ModelForm):
-    """A form for creating new users. Includes all the required
-    fields, plus a repeated password."""
+    """A form for creating new patient user"""
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(
         label='Password confirmation', widget=forms.PasswordInput)
@@ -214,56 +208,3 @@ class UserAdminChangeForm(forms.ModelForm):
         return self.initial["password"]
 
 
-
-
-
-
-#GUEST PROFILE FORM
-
-
-
-
-""""
-#GUEST DATAFORM
-class RegNum(Field):
-    template = 'frontdesk/reg_num.html'
-
-
-class GuestDataForm(forms.ModelForm):
-    
-
-        model = MyUser
-        fields = ('title', 'reg_No', 'surname', 'first_name', 'country', 'email', 'state', 'phone', 'company_name',)
-        exclude = ( 'updated_on', 'created_on')
-     
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Row(
-                Column(RegNum('reg_No'), css_class='form-group col-md-6 mb-0'),
-                Column('title', css_class='form-group col-md-4 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
-                Column('first_name', css_class='form-group col-md-6 mb-0'),
-                Column('surname', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
-
-                Column('email', css_class='form-group col-md-6 mb-0'),
-                Column('phone', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
-            Row(
-                Column('company_name', css_class='form-group col-md-4 mb-0'),
-                Column('country', css_class='form-group col-md-4 mb-0'),
-                Column('state', css_class='form-group col-md-4 mb-0'),
-                css_class='form-row'
-            ),
-            
-        )
-
-"""
