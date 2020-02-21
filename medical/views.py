@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import (CreateView,TemplateView)
 from .models import MyUser
 from .forms import MedicalCreationForm,PatientCreationForm
-
+from MedicalRecord.models import PatientMedicalRecord
 
 User = get_user_model
 
@@ -16,6 +16,7 @@ def login_page(request):
         user = authenticate(email=email,password=password)
         if user is not None:
             login(request,user)
+            messages.success(request, f'You Have Login !')
             if request.user.role == 'Doctor':
                 return redirect('medical_index')
             if request.user.role == 'Patient':
@@ -72,4 +73,14 @@ def patient_page(request):
 
 @login_required
 def medical_page(request):
-    return render(request, 'dashboard.html')
+    medical_staff = MyUser.objects.count()
+    patient_user = MyUser.objects.count()
+    patient_medical_records = PatientMedicalRecord.objects.all()
+    patient_records = PatientMedicalRecord.objects.all().count
+    context = {
+        'medical_staff':medical_staff,
+        'patient_medical_records': patient_medical_records,
+        'patient_user':patient_user,
+        'patient_records':patient_records
+    }
+    return render(request, 'dashboard.html',context)

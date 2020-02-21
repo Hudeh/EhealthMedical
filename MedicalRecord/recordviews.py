@@ -22,3 +22,27 @@ def MedicalRecord(request):
         record_form.save()
         messages.success(request, f'Your Appointment was Succesful')
     return render(request,'home.html')
+
+
+
+def search(request):
+    queryset_list = Listing.objects.order_by('-list_date')
+    # keywords search
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+            queryset_list = queryset_list.filter( description__icontains=keywords)
+    #city
+    
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            queryset_list = queryset_list.filter(city__icontains=city)
+
+    context = { 
+    'listings' : queryset_list, 
+    'state_choice': state_choice,
+    'city_choice': city_choice,
+    'Values' : request.GET
+    }
+    return render(request, 'listing/search.html', context)

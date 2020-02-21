@@ -302,7 +302,9 @@
 	$('#appointment_time').timepicker();
 
 
-
+	setTimeout(function() {
+		$('#message').fadeOut('slow');
+	}, 5000);
 
 })(jQuery);
 
