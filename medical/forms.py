@@ -20,14 +20,13 @@ class MedicalCreationForm(forms.ModelForm):
                          'sex', 'department', 'email', 'role','birth_date', 'phone','state','address')
         widgets = {
             'birth_date': forms.DateTimeInput(format=("%Y-%m-%d"), attrs={'class': 'form-control',  'type': 'date'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'Enter Guest Full Name'}),
+            'first_name': forms.TextInput(attrs={'placeholder': 'Enter First Name'}),
+            'surname': forms.TextInput(attrs={'placeholder': 'Enter Surname'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Enter Email'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'Enter Phone Num'}),
-            'role': forms.Select(attrs={'placeholder': 'Numbers Night'}),
-            'department': forms.Select(attrs={'readonly': 'readonly'}),
-            'gender': forms.Select(attrs={'readonly': 'readonly'}),
-            'title': forms.Select(attrs={'readonly': 'readonly'}),
+            'phone': forms.TextInput(attrs={'placeholder': 'Enter Phone Number'}),
+            'role': forms.Select(),
         }
+        
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -111,16 +110,7 @@ class PatientCreationForm(forms.ModelForm):
         model = MyUser
         fields = ('title','first_name', 'surname',
                          'sex', 'email', 'role','birth_date', 'phone','state','address')
-        widgets = {
-            'birth_date': forms.DateTimeInput(format=("%Y-%m-%d"), attrs={'class': 'form-control',  'type': 'date'}),
-            'first_name': forms.TextInput(attrs={'placeholder': 'Enter Guest Full Name'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Enter Email'}),
-            'phone': forms.TextInput(attrs={'placeholder': 'Enter Phone Num'}),
-            'role': forms.Select(attrs={'placeholder': 'Numbers Night'}),
-            'department': forms.Select(attrs={'readonly': 'readonly'}),
-            'gender': forms.Select(attrs={'readonly': 'readonly'}),
-            'title': forms.Select(attrs={'readonly': 'readonly'}),
-        }
+      
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

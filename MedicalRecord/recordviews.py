@@ -30,7 +30,7 @@ def MedicalRecord(request):
 
 
 def search(request):
-    records = PatientMedicalRecord.objects.order_by('-created_at')
+    records = PatientMedicalRecord.objects.order_by('-created_on')
 
     if 'condition' in request.GET:
         keywords = request.GET['condition']

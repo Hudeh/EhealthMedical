@@ -10,6 +10,11 @@ from MedicalRecord.models import PatientMedicalRecord
 User = get_user_model
 
 
+
+#ladning page not in use
+def index(request):
+    return render(request, 'index.html')
+
 #login page
 def login_page(request):
     if request.method == 'POST':
@@ -52,7 +57,7 @@ def medical_signup(request):
     context = {
        'form':form,
     }
-    return render(request, 'registration/signup_form.html', context)
+    return render(request, 'registration/signup.html', context)
 
 #patient signup
 def patient_signup(request):
@@ -66,7 +71,7 @@ def patient_signup(request):
     context = {
        'forms':forms
     }
-    return render(request, 'registration/signup_form.html', context)
+    return render(request, 'registration/signup.html', context)
 
 
 #patient web page

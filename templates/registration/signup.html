@@ -4,23 +4,13 @@
 
 
 {% block content %}
-{% if form.non_field_errors %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      {% for error in form.non_field_errors %}
-        <p{% if forloop.last %} class="mb-0"{% endif %}>{{ error }}</p>
-      {% endfor %}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  {% endif %}
 <div class="wrapper-page">
 
     <div class="card overflow-hidden account-card mx-3">
 
         <div class="bg-primary p-4 text-white text-center position-relative">
-            <h4 class="font-20 m-b-5">Welcome Back !</h4>
-            <p class="text-white-50 mb-4">Sign in to continue to Dashboard.</p>
+            <h4 class="font-20 m-b-5">Signup</h4>
+            <p class="text-white-50 mb-4">Signup to continue to Dashboard.</p>
             <a href="/" class="logo logo-admin"><img src="{% static 'assets/images/logo-sm.png' %}"
                     height="24" alt="logo"></a>
         </div>
@@ -44,7 +34,7 @@
                   <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                           <div class="modal-header">
-                              <h5 class="modal-title mt-0" id="myModalLabel">Modal Heading</h5>
+                              <h5 class="modal-title mt-0" id="modal-medical">Medical Signup</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                           </div>
                           <div class="modal-body">
@@ -65,7 +55,7 @@
                   <div class="modal-dialog modal-lg">
                       <div class="modal-content">
                           <div class="modal-header">
-                              <h5 class="modal-title mt-0" id="myModalLabel">Modal Heading</h5>
+                              <h5 class="modal-title mt-0" id="myModalLabel">Patient Signup</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                           </div>
                           <div class="modal-body">
