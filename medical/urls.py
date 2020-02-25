@@ -4,7 +4,8 @@ from MedicalRecord import recordviews
 
 # all urls for both medical and patient signup and index page
 urlpatterns = [
-    path('', views.login_page, name='login'),
+    path('login/', views.login_page, name='login'),
+    path('', views.index, name='index'),
     path('logout/', views.logout_page, name='logout'),
     path('medical/signup/', views.medical_signup, name='medical_signup'),
     path('index/patient/', views.patient_page, name='patient_index'),

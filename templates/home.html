@@ -42,10 +42,8 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
-            <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="{% url 'medical_index' %}" class="nav-link">Dashboard</a></li>
-            <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalAppointment"><span>Make an Appointment</span></a></li>
+            <li class="nav-item cta"><a href="#" class="nav-link" data-toggle="modal" data-target="#modalAppointment"><span>Make an Appointment</span></a></li>
             <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
           {% else %}
             <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
@@ -145,7 +143,7 @@
       </div>
     </section>
 
-    <section class="ftco-section-2 img" style="background-image: url('/static/assets2/img/work_1.jpg');">
+    <section class="ftco-section-2 img" style="background-image: url('/static/assets2/images/dept-1.jpg');">
     	<div class="container">
     		<div class="row d-md-flex justify-content-end">
     			<div class="col-md-6">
@@ -201,7 +199,7 @@
         	<div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-2">
 	            <div class="flipper">
-	              <div class="front" style="background-image: url(images/doctor-1.jpg);">
+	              <div class="front" style="background-image: url(/static/assets2/images/doctor-1.jpg);">
 	                <div class="box">
 	                  <h2>Aldin Powell</h2>
 	                  <p>Neurologist</p>
@@ -214,7 +212,7 @@
 	                </blockquote>
 	                <div class="author d-flex">
 	                  <div class="image mr-3 align-self-center">
-	                    <div class="img" style="background-image: url(images/doctor-1.jpg);"></div>
+	                    <div class="img" style="background-image: url(/static/assets2/images/doctor-1.jpg);"></div>
 	                  </div>
 	                  <div class="name align-self-center">Aldin Powell <span class="position">Neurologist</span></div>
 	                </div>
@@ -225,7 +223,7 @@
 	        <div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-2">
 	            <div class="flipper">
-	              <div class="front" style="background-image: url(images/doctor-2.jpg);">
+	              <div class="front" style="background-image: url(/static/assets2/images/doctor-2.jpg);">
 	                <div class="box">
 	                  <h2>Aldin Powell</h2>
 	                  <p>Pediatrician</p>
@@ -238,7 +236,7 @@
 	                </blockquote>
 	                <div class="author d-flex">
 	                  <div class="image mr-3 align-self-center">
-	                    <div class="img" style="background-image: url(images/doctor-2.jpg);"></div>
+	                    <div class="img" style="background-image: url(/static/assets2/images/doctor-2.jpg);"></div>
 	                  </div>
 	                  <div class="name align-self-center">Aldin Powell <span class="position">Pediatrician</span></div>
 	                </div>
@@ -249,7 +247,7 @@
 	        <div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-2">
 	            <div class="flipper">
-	              <div class="front" style="background-image: url(images/doctor-3.jpg);">
+	              <div class="front" style="background-image: url(/static/assets2/images/doctor-3.jpg);">
 	                <div class="box">
 	                  <h2>Aldin Powell</h2>
 	                  <p>Ophthalmologist</p>
@@ -262,7 +260,7 @@
 	                </blockquote>
 	                <div class="author d-flex">
 	                  <div class="image mr-3 align-self-center">
-	                    <div class="img" style="background-image: url(images/doctor-3.jpg);"></div>
+	                    <div class="img" style="background-image: url(/static/assets2/images/doctor-3.jpg);"></div>
 	                  </div>
 	                  <div class="name align-self-center">Aldin Powell <span class="position">Ophthalmologist</span></div>
 	                </div>
@@ -273,7 +271,7 @@
 	        <div class="col-md-6 col-lg-3 ftco-animate">
 	          <div class="block-2">
 	            <div class="flipper">
-	              <div class="front" style="background-image: url(images/doctor-4.jpg);">
+	              <div class="front" style="background-image: url(/static/assets2/images/doctor-4.jpg);">
 	                <div class="box">
 	                  <h2>Aldin Powell</h2>
 	                  <p>Pulmonologist</p>
@@ -286,7 +284,7 @@
 	                </blockquote>
 	                <div class="author d-flex">
 	                  <div class="image mr-3 align-self-center">
-	                    <div class="img" style="background-image: url(images/doctor-4.jpg);"></div>
+	                    <div class="img" style="background-image: url(/static/assets2/images/doctor-4.jpg);"></div>
 	                  </div>
 	                  <div class="name align-self-center">Aldin Powell <span class="position">Pulmonologist</span></div>
 	                </div>
@@ -304,7 +302,7 @@
     	</div>
     </section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_4.jpg);">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(/static/assets2/images/bg_4.jpg);">
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
@@ -365,7 +363,7 @@
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap text-center">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(/static/assets2/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -379,7 +377,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center">
-                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(/static/assets2/images/person_2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -393,7 +391,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center">
-                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(/static/assets2/images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -407,7 +405,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center">
-                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(/static/assets2/images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -435,7 +433,7 @@
         <div class="row d-flex">
           <div class="col-md-6 ftco-animate">
             <div class="blog-entry align-self-stretch d-flex">
-              <a href="blog-single.html" class="block-20 order-md-last" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20 order-md-last" style="background-image: url('/static/assets2/images/image_1.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
@@ -450,7 +448,7 @@
           </div>
           <div class="col-md-6 ftco-animate">
             <div class="blog-entry align-self-stretch d-flex">
-              <a href="blog-single.html" class="block-20 order-md-last" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20 order-md-last" style="background-image: url('/static/assets2/images/image_2.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
@@ -465,7 +463,7 @@
           </div>
           <div class="col-md-6 ftco-animate">
             <div class="blog-entry align-self-stretch d-flex">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('/static/assets2/images/image_3.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
@@ -480,7 +478,7 @@
           </div>
           <div class="col-md-6 ftco-animate">
             <div class="blog-entry align-self-stretch d-flex">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('/static/assets2/images/image_4.jpg');">
               </a>
               <div class="text p-4 d-block">
               	<div class="meta mb-3">
@@ -520,7 +518,7 @@
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(images/bg_5.jpg);">
+    <footer class="ftco-footer ftco-bg-dark ftco-section img" style="background-image: url(/static/assets2/images/bg_5.jpg);">
     	<div class="overlay"></div>
       <div class="container">
         <div class="row mb-5">
@@ -594,7 +592,7 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title"></h5>>Appointment Form</h5>
+            <h5 class="modal-title"></h5>Appointment Form</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -678,7 +676,7 @@
                 <label class="text-black">Details</label>
                 <textarea name="Symtomps_complaint"  class="form-control" cols="30" rows="10"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <button type="submit" class="btn btn-primary">submit</button>
             </div>
           </form>
           </div>

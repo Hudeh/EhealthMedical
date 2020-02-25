@@ -13,7 +13,7 @@ User = get_user_model
 
 #ladning page not in use
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'home.html')
 
 #login page this is landing page for now
 def login_page(request):
